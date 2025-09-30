@@ -1,23 +1,50 @@
-import React from 'react'
+import React, { useState } from 'react';
+import { createUser } from '../services/userService';
 
 function RegisForm() {
+  const [formData, setFormData] = useState({
+    regisUsername: '',
+    createPassword: ''
+  });
 
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
-
-
-
-
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await createUser(formData);
+      alert('Usuario registrado exitosamente');
+      setFormData({ regisUsername: '', createPassword: '' });
+    } catch (error) {
+      console.error('Error al registrar usuario:', error);
+    }
+  };
 
   return (
-    <form action="">
-        <label htmlFor="regisUsername">Create your Username</label>
-        <input type="text" name='regisUsername' placeholder='Create your new Username here' required  />
-        <label htmlFor="createPassword">Create your Password</label>
-        <input type="password" name='createPassword' placeholder='Type your secret password here' required/>
-        
-        <button className='RegisBtn'>Register</button>
+    <form onSubmit={handleSubmit}>
+      <label htmlFor="regisUsername">Create your Username</label>
+      <input
+        type="text"
+        name="regisUsername"
+        placeholder="Create your new Username here"
+        value={formData.regisUsername}
+        onChange={handleChange}
+        required
+      />
+      <label htmlFor="createPassword">Create your Password</label>
+      <input
+        type="password"
+        name="createPassword"
+        placeholder="Type your secret password here"
+        value={formData.createPassword}
+        onChange={handleChange}
+        required
+      />
+      <button className="RegisBtn" type="submit">Register</button>
     </form>
-  )
+  );
 }
 
-export default RegisForm
+export default RegisForm;
