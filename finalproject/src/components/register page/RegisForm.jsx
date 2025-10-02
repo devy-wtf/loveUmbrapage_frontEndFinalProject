@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
-import { createUser } from '../services/userService';
+import { useNavigate } from 'react-router-dom';
+import { createUser } from '../../api/RegisCRUD';
 
 function RegisForm() {
   const [formData, setFormData] = useState({
     regisUsername: '',
     createPassword: ''
   });
+
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -17,6 +20,11 @@ function RegisForm() {
       await createUser(formData);
       alert('Usuario registrado exitosamente');
       setFormData({ regisUsername: '', createPassword: '' });
+
+      
+      setTimeout(() => {
+        navigate('/Login');
+      }, 2000);
     } catch (error) {
       console.error('Error al registrar usuario:', error);
     }

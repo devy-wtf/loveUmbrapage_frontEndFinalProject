@@ -1,10 +1,11 @@
 import React from 'react'
-import items from './ItemsArray'
+import Items from './ItemsArray'
+import MerchCard from './MerchCard'
 
 function AlbumnMerchInfo() {
   return (
     <div className='merchGrid'>
-      {items.map((item, index) => (
+      {Items.map((item, index) => (
         <MerchCard
           key={index}
           title={item.title}

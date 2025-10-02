@@ -1,4 +1,4 @@
-const items = [
+const Items = [
     {title: 'LoveUmbra', 
         description:'First album released, the debut.'},
 
@@ -19,4 +19,4 @@ const items = [
     }
 ]
 
-export default items
+export default Items
