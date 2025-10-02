@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3000/users'; //
+const API_URL = 'http://localhost:3000/users';
 
 export async function validateUser(username, password) {
   const response = await fetch(API_URL);

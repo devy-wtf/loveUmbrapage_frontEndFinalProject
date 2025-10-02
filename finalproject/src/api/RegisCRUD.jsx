@@ -1,6 +1,5 @@
 const API_URL = 'http://localhost:3000/users';
 
-
 export async function createUser(userData) {
   const response = await fetch(API_URL, {
     method: 'POST',
@@ -10,12 +9,10 @@ export async function createUser(userData) {
   return response.json();
 }
 
-
 export async function getUsers() {
   const response = await fetch(API_URL);
   return response.json();
 }
-
 
 export async function updateUser(id, updatedData) {
   const response = await fetch(`${API_URL}/${id}`, {
@@ -25,7 +22,6 @@ export async function updateUser(id, updatedData) {
   });
   return response.json();
 }
-
 
 export async function deleteUser(id) {
   const response = await fetch(`${API_URL}/${id}`, {

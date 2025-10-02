@@ -2,12 +2,15 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { validateUser } from '../../api/LoginCRUD';
 
+
 function Form() {
   const [credentials, setCredentials] = useState({
     Username: '',
     password: ''
   });
 
+  const [message, setMessage] = useState('');
+  const [showMessage, setShowMessage] = useState(false);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -19,18 +22,24 @@ function Form() {
     try {
       const isValid = await validateUser(credentials.Username, credentials.password);
       if (isValid) {
-        alert('Login successful!');
-        navigate('/Main') 
+        setMessage('Inicio de sesión exitoso');
+        setShowMessage(true);
+        setTimeout(() => {
+          navigate('/');
+        }, 2000);
       } else {
-        alert('The data you provided is incorrect or does not exist. Please verify and try again.');
+        setMessage('Usuario o contraseña incorrectos');
+        setShowMessage(true);
       }
     } catch (error) {
-      console.error('Oops! It seems there was a problem:', error);
+      console.error('Error al iniciar sesión:', error);
+      setMessage('Ocurrió un error. Intenta de nuevo.');
+      setShowMessage(true);
     }
   };
 
   const goToRegister = () => {
-    navigate('/Register');  
+    navigate('/Register');
   };
 
   return (
@@ -59,6 +68,8 @@ function Form() {
       <button className="registerPageBtn" type="button" onClick={goToRegister}>
         Go to Register
       </button>
+
+      {showMessage && <div className="popup-message">{message}</div>}
     </form>
   );
 }

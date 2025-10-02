@@ -14,14 +14,13 @@ function App() {
 
   return (
     <Routes>
-      <Route path="Main" element={<MainPage />} />
+      <Route path="/" element={<MainPage />} />
       <Route path='/Login' element={<LoginPage />} />
       <Route path='/Register' element={<RegisterPage />} />
       <Route path='/Merch' element={<MerchPage />} />
-
-
     </Routes>
   )
+    
 }
 
 export default App

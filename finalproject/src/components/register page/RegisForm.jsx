@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { createUser } from '../../api/RegisCRUD';
+import { createUser, getUsers } from '../../api/RegisCRUD';
 
 function RegisForm() {
   const [formData, setFormData] = useState({
