@@ -1,0 +1,137 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  font-family: 'Montserrat', sans-serif;
+  overflow: hidden;
+}
+
+
+.main-page {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.main-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/mainbg.jpg'); 
+  background-size: cover;
+  background-position: center;
+  opacity: 0.25;
+  z-index: 0;
+}
+
+
+.main-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  padding: 20px;
+}
+
+
+.part1 {
+  font-size: 5rem;
+  color: #ff00aa;
+  text-shadow: 0 0 20px #ff00aa;
+  animation: fadeIn 1s ease-out;
+}
+
+.part2 {
+  font-size: 5rem;
+  color: #ccc;
+  text-shadow: 0 0 10px #ccc;
+  animation: fadeIn 1.2s ease-out;
+}
+
+.part3 {
+  font-size: 5rem;
+  color: #ccc;
+  text-shadow: 0 0 10px #ccc;
+  animation: fadeIn 1.4s ease-out;
+}
+
+
+.smallTitle1 {
+  font-size: 1.5rem;
+  color: #ff00aa;
+  font-family: 'Cursive', sans-serif;
+  margin-top: 20px;
+  animation: fadeIn 1.6s ease-out;
+}
+
+.smallTitle2 {
+  font-size: 1.5rem;
+  color: #ff00aa;
+  font-family: 'Cursive', sans-serif;
+  animation: fadeIn 1.8s ease-out;
+}
+
+.main-header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+}
+
+.main-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.main-navLinks {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.main-navButton,
+.main-loginButton {
+  padding: 10px 20px;
+  background-color: transparent;
+  border: 2px solid #ff00aa;
+  color: #ff00aa;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.main-navButton:hover,
+.main-loginButton:hover {
+  background-color: #ff00aa;
+  color: #000;
+  box-shadow: 0 0 10px #ff00aa;
+}
+
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

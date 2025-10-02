@@ -7,10 +7,10 @@ function Titles() {
             Love
         </h1>
         <h1 className='part2'>
-            U
+            Umbra
         </h1>
         <h1 className='part3'>
-            Umbra
+            ♡
         </h1> 
 
         <h3 className='smallTitle1'>When Darkness is Dazzling</h3>

@@ -3,22 +3,22 @@ import { Link } from 'react-router-dom';
 
 function Header() {
   return (
-    <header className="header">
-      <nav className="navbar">
-        <ul className="navLinks">
+    <header className="main-header">
+      <nav className="main-navbar">
+        <ul className="main-navLinks">
           <li>
             <Link to="/Merch">
-              <button className="navButton">Merch</button>
+              <button className="main-navButton">Merch</button>
             </Link>
           </li>
           <li>
             <Link to="/Register">
-              <button className="navButton">Register</button>
+              <button className="main-navButton">Register</button>
             </Link>
           </li>
         </ul>
         <Link to="/Login">
-          <button className="loginButton">Log In</button>
+          <button className="main-loginButton">Log In</button>
         </Link>
       </nav>
     </header>
